@@ -12,7 +12,7 @@ class City extends Model
         "state_id",
         'name',
     ];
-    public function state(): Belongsto
+    public function state()
     {
         return $this->belongsTo(State::class);
     }

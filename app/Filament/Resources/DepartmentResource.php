@@ -32,10 +32,13 @@ class DepartmentResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
-            ->schema([
-                Forms\Components\TextInput::make('city_id')
-                    ->required()
-                    ->numeric(),
+        ->schema([
+            Forms\Components\Select::make('country_id')
+                ->relationship(name: 'Country', titleAttribute: 'name')
+                ->searchable()
+                ->preload()
+                //->multiple()
+                ->required(false),
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),

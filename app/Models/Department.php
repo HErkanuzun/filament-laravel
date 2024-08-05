@@ -9,8 +9,8 @@ class Department extends Model
 {
     use hasFactory;
     protected $fillable = [
-        "city_id",
         'name',
+        'city_id'
     ];
     public function employees()
     {

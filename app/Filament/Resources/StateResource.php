@@ -35,11 +35,13 @@ class StateResource extends Resource
             ->schema([
                 Forms\Components\Select::make('country_id')
                     ->relationship(name: 'Country', titleAttribute: 'name')
+                    ->searchable()
+                    ->preload()
+                    //->multiple()
                     ->required(false),
 
                 Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->numeric(),
+                    ->required(),
             ]);
 
     }
